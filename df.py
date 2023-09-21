@@ -1,24 +1,23 @@
+from equacao1 import f1, g1, resultado1
+from equacao2 import f2,g2, resultado2
+from equacao3 import f3,g3, resultado3
 
-for i in range(3):
-    f_formula = input("\nInsira a função f(x): ")
-    g_formula = input("Insira a função g(x): ")
+# Somar os resultados
+soma_resultados = sum(resultado1) + sum(resultado2) + sum(resultado3)
 
-    f_formula = f_formula.replace("^", "**")
-    g_formula = g_formula.replace("^", "**")
+print("\n(g1 ∘ f1)(", x, ") =", resultado1[0])
+print("(g1 ∘ g1)(", x, ") =", resultado1[1])
+print("(f1 ∘ f1)(", x, ") =", resultado1[2])
+print("(f1 ∘ g1)(", x, ") =", resultado1[3])
 
-    def f(x):
-        return eval(f_formula)
+print("\n(g2 ∘ f2)(", x, ") =", resultado2[0])
+print("(g2 ∘ g2)(", x, ") =", resultado2[1])
+print("(f2 ∘ f2)(", x, ") =", resultado2[2])
+print("(f2 ∘ g2)(", x, ") =", resultado2[3])
 
+print("\n(g3 ∘ f3)(", x, ") =", resultado3[0])
+print("(g3 ∘ g3)(", x, ") =", resultado3[1])
+print("(f3 ∘ f3)(", x, ") =", resultado3[2])
+print("(f3 ∘ g3)(", x, ") =", resultado3[3])
 
-    def g(x):
-        return eval(g_formula)
-
-
-    x = float(input("Insira o valor de x: "))
-
-    resultado = [g(f(x)), g(g(x)), f(f(x)), f(g(x))]
-
-    print("\n(g ∘ f)(", x, ") =", resultado[0])
-    print("(g ∘ g)(", x, ") =", resultado[1])
-    print("(f ∘ f)(", x, ") =", resultado[2])
-    print("(f ∘ g)(", x, ") =", resultado[3])
+print("\nSoma dos resultados =", soma_resultados)
